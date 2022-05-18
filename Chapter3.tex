@@ -1,0 +1,304 @@
+\chapter{Resultat et discussion } % Main chapter title
+\label{Chapter3} %
+\section{Introduction}
+Les III-Ns dopés aux terres rares (TR) sont récemment apparus comme une nouvelle classe de matériaux phosphorescents pour les ELD à couches minces \cite{c1,c2}. Par rapport aux semiconducteurs dopés TR avec une bande relativement petite $ (1,5~eV) $ comme le $ GaAs $ ou $ Si $ \cite{c3,c4}, le dopage de semiconducteurs à large bande interdite tels que $ GaN, l'AlN $ et le $ SiC $ a conduit à l'observation d'une émission intense des TR à la température ambiante \cite{c5,c6}. Des études sur le $ Er $:$ GaN $ et le $ Eu $:$ GaN $ ont montré que les ions trivalants des $ TR^{+3} $ peuvent être incorporés dans le $ GaN $ à des concentrations aussi élevées que 1 à 2\% sans extinction de concentration d'émission significative \cite{c7,c8}. Les efforts de recherche actuels sur les nitrures dopés par les TR se concentrent sur l'optimisation des matériaux existants et des dispositifs EL \cite{c9,c5}, ainsi que des spécifications fondamentales.
+
+\section{Détails de calcul}
+
+Pour explorer les propriétés électroniques, optique  et de transport du $ GaN $, et du $ GaN $ dopé par les terres rares TR $ (Gd, Er, Tm) $ dans la structure wurtzite, nous avons effectués nos calculs par la méthode des ondes planes augmentées linéarisées à potentiel total (FP-LAPW) avec l'approche théorique de la théorie de la fonctionnelle de la densité (DFT) implémenté dans le code WIEN2K en utilisant l'approximation GGA+U selon la paramétrisation de Perdew, Burck et Ernzenhorf. Dans cette méthode l’espace est divisé en sphères muffin-tin (MT) de rayon Rmt qui entourent les noyaux et ne se chevauchent pas et en une région interstitielle. Les fonctions de bases, les densités électroniques et les potentiels sont développés en harmoniques sphériques autour des sites atomiques et en série et en ondes planes dans la région interstitielle. Le potentiel d’échange et de corrélation a été traité en utilisant l’approximation du gradient généralisé (GGA), et La LSDA+U avec l'effet du couplage spin orbite. Les valeurs du terme de Hubbard $ U $ et d’échange $ J $ utilisées dans tous nos calculs pour les quatre composés sont montrés dans le tableau \ref{Hubbard} prisent de la référence \cite{c10-02}. En effet l'approche LSDA+U est crucial pour les électrons $ f $.
+\begin{table}
+	\centering
+	\begin{tabular}{lll}
+		\hline\noalign{\smallskip}
+		Matériau & U & J  \\
+		\noalign{\smallskip}\hline\noalign{\smallskip}
+		$ SmN $ & 8.506 & 1.109 \\
+		
+		\noalign{\smallskip}\hline
+	\end{tabular}
+	\caption{Les valeurs du terme d’Hubbard $ U $ et de l’échange $ J $ pour le $ SmN $.}
+	\label{Hubbard}  
+\end{table} 
+L’intégration sur la zone de Brillouin a été remplacée par une sommation discrète sur un ensemble spécial de points-k en utilisant la méthode standard de Monkhorst et Pack. Les ondes planes sont limitées à $ R_{mt}*k_{max} = 8 $, $ R_{mt} $ est le rayon moyen des sphères muffin-tin, et le développement des fonctions d’ondes se fait jusqu’à $ l_{max}=10 $ à l’intérieur des sphères muffin-tin. Dans le cas du $ GaN $ nous avons utilisés des rayons muffin-tin $ R_{mt} $, de 1.93 unités atomiques (u.a), 1.6 u.a. pour le galium, et l’azote respectivement. Concernant les terres rares on a utilisé des rayons muffin-tin égale à 2.3 u.a. pour les terres rares (l’europium, l’erbium, le gadolinium et le thulium). Une grille de 2000 points $ K $ ont été utilisées pour le maillage de la zone de Brillouin du $ GaN $ et 500 pour le $ GaN $-dopé par les TR. La configuration électronique de chaque élément est présentée sur le tableau \ref{tab:Configuration}.
+\begin{table}
+	\centering
+	\begin{tabular}{lll}
+		\hline\noalign{\smallskip}
+		Matériau & Configuration & Nomber d'électron  \\
+		\noalign{\smallskip}\hline\noalign{\smallskip}
+		$ Ga $&  $ (Ar)~ 3d^{10}4s^{2}4p^{1} $& 31 électrons\\
+		$ N  $&  $ (He)~ 2s_{2}2p^{3} $ & 7 électrons\\
+		$ Sm $&  $ (Xe)~ 4f^{6}5d^{1}6s^{1} $ & 62 électrons\\
+		\noalign{\smallskip}\hline
+	\end{tabular}
+	\caption{Configuration atomique des élément etudier.}
+	\label{tab:Configuration}     
+\end{table} 
+L'objectif de ce travail est d'étudier les propriétés électroniques, optiques et de transport du $ GaN $ et de $ GaN $ dopé $ Sm $ avec une concentration de 0.125\% dans la structure wurtzite. Pour étudier les propriétés optiques, il est nécessaire d'utiliser un maillage le plus fin que possible dans la zone de Brillouin. A cet effet, le calcul SCF est effectué pour un très grand nombre de points $ k $. Dans le code Wien2k la subroutine " optique", calcule alors, pour chaque point $ k $ et chaque combinaison (bande occupée / bande vide), les composantes du moment dipolaire de la matrice. Le calcul de la fonction d'électrique $ \epsilon"_{r} $ dans la zone de Brillouin est effectuée par la  subroutine "joint". L'application de la formule de Kramers-Kronig pour calculer la composante $ \epsilon_{1} $ est réalisée par la soubroutine "kram". Cela permet de comparer plus facilement les spectres obtenus avec les données de spectroscopie de perte d'énergie électronique. Il serait intéressant d'identifier les transitions responsables des pics de la courbe de la fonction diélectrique $ \epsilon"_{r} $. Généralement, les transitions de la réponse optique sont provoquées par des transitions d'électrons entre la bande de valence et la bande de conduction. Ces pics des spectres optiques linéaires correspondent à des transitions dans la structure de bande. L’indice optique se compose d'une partie réelle et d'une partie imaginaire:
+
+̃\begin{equation}\label{1}
+	n=n+ik
+\end{equation} 
+
+La partie réelle, $ n $ est appelé indice de réfraction. Cette grandeur est liée à la vitesse de lapropagation de la lumière dans la matière. La partie imaginaire $ k $, est liée à l’absorption de lalumière par le matériau. Du point de vue de l’optique, cette grandeur, ne dépend que de la structure atomique et électronique du matériau, est sa propriété caractéristique intrinsèque. La fonction diélectrique décrit la réponse linéaire d'un matériau à la longueur d'onde du rayonnement électromagnétique ou à l'énergie photonique qui concerne l'interaction des photons avec les électrons. Le formalisme d'Ehrenreich et Cohen utilisé pour décrire la fonction diélectrique complexe comme:
+\begin{equation}\label{2}
+	\epsilon_{r}(\omega)= \epsilon'_{r}(\omega)+i\epsilon''_{r}(\omega)
+\end{equation}
+
+
+\begin{equation}\label{3}
+	\epsilon'_{r}(\omega)=1+\frac{2}{\pi}P\int_0^\infty\frac{\omega'\epsilon''_{r}(\omega')}{\omega'^{2}-\omega^{2}}d\omega' 
+\end{equation}
+
+\begin{equation}\label{4}
+	\epsilon''_{r}(\omega)=\frac{2\omega}{\pi}P\int_0^\infty\frac{\epsilon'_{r}(\omega')}{\omega'^{2}-\omega^{2}}d\omega'
+\end{equation}
+Où $ \omega $ est la variable d'intégration, $ P $ représente la valeur principale de Chauchy de l'intégrale, de même, on peut relier les parties réelles et imaginaires de la polarisabilité.
+\begin{equation}\label{5}
+	n(\omega)=1+\frac{2}{\pi}P\int_0^\infty\frac{K(\omega')}{\omega'-\omega}d\omega'
+\end{equation}
+et 
+\begin{equation}\label{6}
+	K(\omega)=\frac{2}{\pi}P\int_0^\infty\frac{K(\omega')}{\omega'-\omega}d\omega'
+\end{equation}
+Le coefficient d'absorption $ \alpha (E) $ peut être donné par:
+\begin{equation}\label{7}
+	\alpha(E) = \frac{4\pi}{\lambda}K(E)
+\end{equation}
+où $ \lambda $ est la longueur d'onde de la lumière dans le vide La partie réelle de la conductivité optique est calculée selon la relation suivante:
+\begin{equation}\label{8}
+	\sigma(\omega) = \frac{\omega}{4\pi}\epsilon(\omega)
+\end{equation}
+Pour déterminer les propriétés thermoélectriques (TE) nous utilisons le code BoltzTrap, implémenté selon la théorie semi-classique de transport de Boltzmann dans  le constant  de relaxation de temps et les approximations de bandes rigides \cite{c11}. L'efficacité d'un matériau pour les applications TE est déterminée par la valeur de mérite sans dimension: 
+
+\begin{equation}\label{9}
+	ZT = \sigma S ^ {2} T / \kappa
+\end{equation}
+
+Où $ S $ est le coefficient de Seebeck, $ \sigma $: la conductivité électrique, $ T $: la température absolue et $ \kappa $: la conductivité thermique. Les valeurs élevées de facteur de mérite nécessitent des valeurs élevées de $ S $ et $ \sigma $ et de faibles $ \kappa $. Le facteur de puissance d'un matériau TE est donné par: 
+
+\begin{equation}\label{10}
+	P = \sigma S^{2}
+\end{equation}
+
+Ce qui implique toutes les propriétés électriques importantes du matériau. 
+
+\newpage
+\section{Nitrure de gallium $ GaN $}
+
+Au cours des deux dernières décennies, les matériaux semiconducteurs composés de nitrure du groupe III ont révolutionné l'optoélectronique moderne et les dispositifs à haute fréquence et sont des hôtes pour les TR. Ils ont attiré l'attention  des chercheurs pour leurs applications dans la fabrication des dispositifs à température ambiante car l'efficacité d'émission augmenter avec la valeur de la bande interdite \cite{c12}. Les nitrures du groupe III, en particulier le $ GaN $, sont particulièrement avantageux, car ils générent des porteurs efficace pour exciter les atomes de TR. De plus, les semiconducteurs III-N à large gap dopés TR permettent une émission de lumière aux longueurs d'onde visibles pour les applications d'affichage couleur en raison de leur grande transparence dans la région du spectrale visible. La photoluminescence et l'électroluminescence à base de $ GaN $ dopé par les TR a été démontrée pour le bleu \cite{c13,c14,c15}, le vert \cite{c14,c16,c17,c18,c19}, le rouge \cite{c20}, le turquoise \cite{c21}, le jaune et l'orange. L'argument  de l'utilisation du dopage TR des III-N  est que l'intégration des couleurs primaires sur un seul substrat permettrait le développement de futures générations d'écrans plats. La figure \ref{fig:colors} illustre la capacité en couleur des dispositifs EL avec du $ GaN $ dopé par les TR sur le diagramme de chromaticité de la Commission internationale d'éclairage (CIE). Le triangle plein dans le diagramme définit la capacité d'émission en couleur à partir du $ GaN $ dopé avec $ Eu $ (rouge), $ Er $ (vert) et $ Tm $ (bleu). Le triangle CIE "polychrome" de l’Union européenne de radiodiffusion (UER) est présenté à titre de comparaison \cite{c23}.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\linewidth, height=0.25\textheight]{Figures/Fig_III/GaN/Colors}
+	\caption{Diagramme de chromaticité x-y  montrant les emplacements de l'émission bleue, verte et rouge dans un dispositif EL basé sur GaN:RE.}
+	\label{fig:colors}
+\end{figure}
+Le $ GaN $ peut cristallisé dans la structure de wurtzite ou de zincblende, la structure de wurtzite étant la plus stable thermodynamiquement. Chaque atome de galium $ Ga $ est entouré par quatre atomes d'azote $ N $; inversement, chaque atome d'azote est en coordonné avec quatre atomes de $ Ga $, avec une séquence d'empilement ABABAB ... de plans (0001) dans la direction [0001]. Dans la Fig.\ref {fig:wurzite} Le sous-réseau azote est décalé d'une fraction u de la maille unitaire le long de l'axe c. Dans la structure wurtzite idéale, ce paramètre u est égal à 3/8.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\linewidth, height=0.20\textheight]{Figures/Fig_III/GaN/Wurzite}
+	\caption{La cellule unitaire de la structure $ GaN $ wurtzite.}
+	\label{fig:wurzite}
+\end{figure}
+\FloatBarrier
+
+\subsection{Propriétés électronique}
+
+Les structures de bandes et les densités d'etats de $ GaN $ obtenues par la méthode FP-LAPW dans la phase wurtzite sont illustrées par la fig \ref{fig:band_GaN}. les structures des bandes, montrent un gap direct au point $ (\Gamma) $, qui est le centre de la zone de Brillouin, la largeur du gap est de 3.41 eV. Les largeurs de  la bande interdite (GAP), sont reportées dans le tableau \ref{tab_GaN} avec les différentes approximations, comparés avec d'autres resultats et aux valeurs expérimentales. en général, sont en bon accord avec d'autres calcules théoriques. D'aprés la fig \ref{fig:band_GaN}, nous pouvons remarquons que les etats $ 2p\_N $ dominent le bas de la bande de valance avec les etats $ 4s\_Ga $, et une faible contribution des etats $ 2s\_N $ et $ 4p\_Ga $, tandé que le haut de la bande dominent par les etats $ 2p\_N $ et une faible contribution de l'état $ 3d\_Ga $ et $ 4p\_Ga $.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{lll}
+		\hline\noalign{\smallskip}
+		Matériau & Approximations & Eg (eV)  \\
+		\noalign{\smallskip}\hline\noalign{\smallskip}
+		& GGA & 2.04 \\
+		$ GaN $ & GGA+mBj & 3.42 \\
+		& GGA+mbJ+So & 3.42 \\
+		\noalign{\smallskip}\hline
+	\end{tabular}
+	\caption{Le gap d'énergie de $ GaN $ avec les  différente  approximations.}
+	\label{tab_GaN}
+\end{table}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\linewidth, height=0.4\textheight]{Figures/Fig_III/GaN/band_GaN}
+	\includegraphics[width=0.85\linewidth, height=0.5\textheight]{Figures/Fig_III/GaN/dos_GaN}
+	\caption{Structure de bande et densité d'état de binaire $ GaN $ wurtzite dans l'aproximation $ GGA+mBj+so $.}
+	\label{fig:band_GaN}
+\end{figure}
+\FloatBarrier
+
+\subsection{Propriétés optiques}
+
+\subsubsection{La fonction diélectrique complexe}
+
+Lorsqu'une onde électromagnétique excite un matériau, elle induit des effets de polarisation ainsi que le déplacement des électrons de conduction. Ces processus constituent la réponse optique du matériau et peuvent être caractérisés par la fonction diélectrique. Cette fonction ($ \epsilon(\omega) $) est utilisée pour décrire la réponse linéaire du matériau au rayonnement électromagnétique qui est liée à l'interaction de photons avec des électrons. $ \epsilon(\omega) $ est déterminée par les transitions électroniques entre la bande de valence et la bande de conduction. Il met en jeu une partie réelle (dispersive) et une partie imaginaire (absorbante), utilisant le formalisme d'Ehrenreich et Cohen l'équaion \eqref{2}. La partie imaginaire $ \epsilon_{r}^{"}(\omega) $ est donnée par l'equation \eqref{4}. La partie imaginaire $ \epsilon_{r}^{"}(\omega) $ de la fonction diélectrique dépend de la transition électronique à l'origine de l'absorption. Les transitions inter-bandes directes peuvent être dérivées de l'identification de la structure de la bande d'énergie. La partie réelle $ \epsilon_{r}^{'}(\omega) $ de la fonction diélectrique peut être obtenue à partir de la partie imaginaire $ \epsilon_{r}^{"}(\omega) $ en utilisant la relation Kramers-Kronig l'éqution \eqref{2}. La connaissance de la partie réelle et la partie imaginaire permet de calculer les autres fonctions optiques telles que la réflectivité, la conductivité optique, l'indice et le coefficient de réfraction. Les propriétés optiques ont été montrées pour une plage d'énergie de 0 à 14 eV pour montrer le comportement optique du matériau dans le spectre de la lumière visible et illustrer la limite de l'anisotropie des propriétés optiques du matériau. L'évolution de la partie imaginaire (absorption) de la fonction diélectrique est indiquée dans la fig \ref{fig:dielectricgan} (b).  
+La principale caractéristique de la partie absorbante est le grand pic, les pics de $ \epsilon_{2}^{xx}$ et $ \epsilon_{2}^{zz}$ correspondent aux transitions optiques de la bande de valence à la bande de conduction et sont en accord avec les autres résultats théoriques. Les valeurs maximales de pic pour $ \epsilon_{2}^{xx}$ et $ \epsilon_{2}^{zz}$ sont respectivement autour de 0.8 et 0.9 eV. Notez qu'un seul pic ne correspond pas à une seule transition inter-bande car plusieurs transitions directes ou indirectes peuvent être trouvées avec une énergie correspondant au même sommet.
+L'évolution de la partie réelle de la fonction diélectrique est indiquée dans la fig \ref{fig:dielectricgan} (a). Les composants $ \epsilon_{1}^{xx}$ et $ \epsilon_{1}^{zz}$ commencent à augmenter jusqu'à ce qu'ils atteint 0.4 eV. Ensuite, ils commencent à diminuer jusqu'à ce qu'ils annulent vers 4 eV.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth, height=0.5\textheight]{Figures/Fig_III/GaN/Dielectric_GaN}
+	\caption{Partie réelle et partie imagininaire de la constante délectrique du $ w-GaN $ massif.}
+	\label{fig:dielectricgan}
+\end{figure}
+
+\FloatBarrier
+
+\subsubsection{La conductivité optique}
+
+Les états occupés sont excités envers les États inoccupés au-dessus du niveau de Fermi par l'absorption des photons. Cette transition inter-bande est appelée " conduction optique " et l'absorption de photons est appelée " absorption inter-bande ". Le terme " conduction optique " signifie la conduction électrique en présence du champ électrique inclus dans la lumière. La variation de la conductivité optique de l'équation \eqref{8} est présente sur la fig \ref{fig:conabsgan} (a), elle démarre à une énergie d’environ 3.0 eV pour les directions $ (xx) $ et $ (zz) $, ces valeurs représentent les écarts d’énergie optique. La conductivité commence à augmenter et arrive au maximum à 12.5 et 13.2 eV pour les directions $ (xx) $ et $ (zz) $ respectivement.
+
+\subsubsection{Le Coefficient d'absorption}
+
+Le coefficient d'absorption inter-bande ($\alpha$) caractérise la partie d'énergie absorbée par le solide. Il détermine à quel point la lumière, d'une longueur d'onde particulière, peut pénétrer un matériau avant qu'elle ne soit absorbée. Dans un matériau avec un coefficient d'absorption faible, la lumière n'est que faiblement absorbée et, si le matériau est suffisamment mince, il semble transparent pour cette longueur d'onde. Le coefficient d'absorption dépend du matériau et de la longueur d'onde de la lumière absorbée voir l'équation \eqref{7}. L'évolution du coefficient d'absorption est représentée sur la fig \ref{fig:conabsgan} (b). Depuis la figure, nous remarquons que l'absorption commence à partir des énergies 0.0 eV pour les direction $ (xx) $ et $ (zz) $. L'absorption commence à augmenter jusqu'à atteindre le maximum pour les énergies 5.0 eV. Nous notons qu'une absorption maximale correspond à une conduction maximale et à une dispersion minimale, c'est-à-dire à une valeur minimale de $ \epsilon_{1}$.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth, height=0.5\textheight]{Figures/Fig_III/GaN/Con_Abs_GaN}
+	\caption{(a) Conductivité optique calculée, (b) Coefficient d'absorption du $w-GaN$.}
+	\label{fig:conabsgan}
+\end{figure}
+
+\FloatBarrier
+
+\subsubsection{Les constantes optiques n et k}
+
+La réfraction provoque la propagation des ondes lumineuses avec une vitesse plus petite que celle dans un espace libre. La réduction de la vitesse entraîne la flexion des rayons lumineux aux interfaces décrites par la loi de réfraction de Snell. La réfraction, en soi, n'affecte pas l'intensité de la lumière lors de sa propagation. La propagation d'un faisceau lumineux à travers un milieu translucide est décrite par l'indice de réfraction $ n $. Ce dernier est défini par la relation entre la vitesse de la lumière dans l'espace libre $ c $ et que dans le milieu $ v $ selon la relation:
+\begin{equation}\label{11}
+	n=\dfrac{c}{v}
+\end{equation}
+L'indice de réfraction $ (n) $ dépend de la fréquence du faisceau lumineux. Cet effet s'appelle: dispersion. $ n(\omega) $ est calculé par l'équation \eqref{5}. Le coefficient d'extinction $ (k) $ représente la perte d'énergie (due à l'absorption et la diffusion) du support dans la magnitude de l'indice de réfraction complexe qui caractérise tout support. Donc, il est décrite par l'équation \eqref{6}. L'évolution de $ n $ et $ k $ est indiquée dans la fig \ref{fig:refextgan}. les valeurs statiques de l'indice de réfraction sont de 3.65 pour la direction $ (xx) $ et 4.03 pour les directions $ (zz) $; Ensuite, il commence à augmenter jusqu'à atteindre son maximum à 2.46 eV pour la direction $ (xx) $ et à 2.29 eV pour les directions $ (zz) $. L'indice de réfraction commence à diminuer au minimum. Au minimum, le phénomène de réfraction disparaît depuis que l'indice de réfraction devient presque égal à 1 et le matériau se comporte comme un espace libre. À partir de ce minimum, la variation de l'indice de réfraction est petite et la dispersion est donc très faible. Nous notons que le phénomène de dispersion est très important dans la région du spectre visible. L'évolution du coefficient d'extinction ou d'atténuation $ K $ est présentée dans la fig \ref{fig:refextgan}, il représente le phénomène d'absorption dans l'indice de réfraction complexe et est directement lié au coefficient d'absorption. Le coefficient d'extinction ne commence donc à augmenter d'un seuil qui représente l'écart optique. Ce seuil est égal à 1.29 eV pour la direction $ (xx) $ et 1.12 eV pour la direction $ (zz) $. Il commence à augmenter pour atteindre un maximum aux énergies 4.34 et 3.49 eV.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth, height=0.5\textheight]{Figures/Fig_III/GaN/Ref_Ext_GaN}
+	\caption{Indice de réfraction et coefficient déxtenction du $w-GaN$.}
+	\label{fig:refextgan}
+\end{figure}
+\FloatBarrier
+\section{Nitrure de Gallium dopé au Samarium $ Sm $:$ GaN $}
+
+\subsection{Propriétés électroniques}
+.........................\\
+
+..................
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\linewidth, height=0.25\textheight]{Figures/Fig_III/SmGaN/band_SmGaNu}
+	\includegraphics[width=0.4\linewidth, height=0.25\textheight]{Figures/Fig_III/SmGaN/band_SmGaNd}
+	\includegraphics[width=0.8\linewidth, height=0.4\textheight]{Figures/Fig_III/SmGaN/dos_SmGaN}
+	\caption{Structure de bande densite d'état de $ Sm_{0.12}Ga_{0.88}N $ dans l'aproximation $ LSDAU+mBj+so $.}
+	\label{fig:bandup_dos_SmGaN}
+\end{figure}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{lll}
+		\hline\noalign{\smallskip}
+		Matériau & Approximations & Eg (eV)  \\
+		\noalign{\smallskip}\hline\noalign{\smallskip}
+		& GGA & 1.59  \\
+		& mBj & 2.28  \\  
+		$ Gd_{0.06}Ga_{0.94}N $ & LSDAU & 3.21\\
+		& mBj+U+So & 3.04 \\
+		\noalign{\smallskip}\hline
+	\end{tabular}
+	\caption{Le gap d'énergie de $ Sm_{0.125}Ga_{0.875}N $ avec les  différente  approximations.}
+	\label{tab_GdGaN}
+\end{table}
+\FloatBarrier
+
+\subsection{Propriétés optiques}
+
+\subsubsection{La fonction diélectrique complexe}
+
+.................................\\
+
+............................
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth, height=0.5\textheight]{Figures/Fig_III/SmGaN/Dielectric_SmGaN}
+	\caption{Partie réelle et partie imagininaire de la constante délectrique du $ SmGaN $ massif.}
+	\label{fig:dielectrismgan}
+\end{figure}
+\FloatBarrier
+
+\subsubsection{La conductivité optique}
+
+La partie réelle de la conductivité optique est calculée selon la relation suivante:
+\begin{equation}
+	\sigma(\omega)= \frac{\omega}{4\pi}\epsilon(\omega)
+\end{equation}
+..........................\\
+............................
+
+\subsubsection{Le coefficient d'absorption}
+
+le coefficient d'absorption ($\alpha$) inter-bandes caractérise l'énergie absorbée par le matériau. Il détermine dans quelle mesure la lumière, d'une longueur d'onde particulière, peut pénétrer dans un matériau avant qu'elle ne soit absorbée. Le coefficient d'absorption dépend du matériau et également de la longueur d'onde de la lumière absorbée. Il peut être calculé via la fonction diélectrique par la relation suivante:
+\begin{equation}
+	\alpha(\omega)=\frac{2\pi\omega}{c}\sqrt{\frac{-Re\epsilon(\omega)|\epsilon(\omega)|}{2}}
+\end{equation}
+........................\\
+.........................
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth, height=0.5\textheight]{Figures/Fig_III/SmGaN/Con_Abs_SmGaN}
+	\caption{(a) Conductivité optique calculée, (b) Coefficient d'absorption du $SmGaN$.}
+	\label{fig:conabssmgan}
+\end{figure}
+\FloatBarrier
+
+\subsubsection{Les constantes optiques n et k}
+
+L'indice de réfraction $(n)$ représente la dispersion du matériau et le coefficient d'extinction $ (k) $ représente la perte d'énergie du melieu. L'évolution de $ n $ et $ k $ est représentée sur la fig \ref{fig:refextgdgan}. Les valeurs statiques de n sont de 2.54 et 2.21 ils commencent à augmenter jusqu'à atteindre un maximum de 3.45 et 3.10 pour les directions $ (xx) $ et $ (zz) $. Le coefficient d'extinction commence donc à augmenter à partir d'un seuil égal à 3.0 eV pour les directions $ (xx) $ et $ (zz) $.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth, height=0.5\textheight]{Figures/Fig_III/SmGaN/Ref_Ext_SmGaN}
+	\caption{Indice de réfraction et coefficient déxtenction du $SmGaN$.}
+	\label{fig:refextsmgan}
+\end{figure}
+\FloatBarrier
+
+\subsection{Propriétés transport}
+
+La plupart des mécanismes de conversion d'énergie génèrent des pertes de chaleur de l'ordre de 60 \% de la quantité totale d'énergie produite. Le thermoélectrique est donc un moyen d'exploiter les pertes thermiques en apportant de l'énergie supplémentaire. Les modules thermoélectriques peuvent être utilisés dans de nombreuses applications telles que la récupération de chaleur, la production de réfrigération et de climatisation, ou l'alimentation de systèmes autonomes et nomades. L'efficacité d'un matériau thermoélectrique est mesurée par la valeur du facteur de mérite où $ S $ est le coefficient de seebek, $ \sigma $ est la conductivité électrique et $ k_ {total} $ est la conductivité thermique totale. Selon nos investigations, aucun résultat théorique n'a été rapporté sur les propriétés thermoélectriques de $ Sm_ {0.125} Ga_{0.875}N $. Ceci nous a motivé à les calculer, en utilisant le code BoltzTrap avec l’approximation généralisée du temps de relaxation  et à discuter ces propriétés, telles que le coefficient de Seebeck, la conductivité électrique, la conductivité thermique, facteur de puissance et facteur de mérite par rapport au potentiel chimique de $ \-0.03 $ eV et 0.01 eV sur une plage de température de 250 à 800 K.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.8\linewidth, height=0.4\textheight]{Figures/Fig_III/SmGaN/SmGaN_Si_S_K_PF}
+	\caption{Dépendance à la température de (a) la conductivite electrique, (b) le coefficient de Seebeck, (c) la conductivite thermique, et (d) le power factor de $ Sm_{0.125}Ga_{0.875}N $. }
+	\label{fig:smgansiskpf}
+	\includegraphics[width=0.8\linewidth, height=0.4\textheight]{Figures/Fig_III/SmGaN/SmGaN_N_Zt}
+	\caption{Dépendance à la température du (a) Nombre de transporteurs, et (b) le figure de merit $ Zt $ de $ Sm_{0.125}Ga_{0.875}N $.}
+	\label{fig:smgannzt}
+\end{figure}
+\FloatBarrier
+
+\subsection{Propriétés magnétiques}
+
+Dans le tableau \ref{Magnetique_SmGaN} on donne les valeurs du moment magnétique du $ Sm_{0.125}Ga_{0.875}N$. D'après ce tableau on remarque que la plupart partie de ces moments magnétiques est fortement trouvée dans les sites des terres rares avec une faible contribution des sites interstitiels.
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{lllll}
+		\hline\noalign{\smallskip}		
+		& LSDA & mBJ & LSDAU & mBj +LSDAU+So \\
+		\noalign{\smallskip}\hline\noalign{\smallskip} 		
+		Ion Magnétique & 5.6532 & 5.6554 & 5.7873 &  ~~~~ 5.77737 \\ 	
+		Magnétique Total $ \mu_{B} $ & 5.658069 & 5.66027 & 5.79217 & ~~~~ 5.78224 \\
+		\noalign{\smallskip}\hline
+	\end{tabular}
+	\caption{Les valeurs des moments magnétique du $ Sm_{0.125}Ga_{0.875}N $.}
+	\label{Magnetique_SmGaN}
+\end{table}
+\FloatBarrier
+
+\subsection{Conclusion}
+Il s'agissait d'une étude Outlook des propriétés électroniques, optiques et thermoélectriques du w-$ Sm_{0.12}Ga_{0.88}N $, en utilisant la méthode FP-LAPW. L'approximation GGA + U a été utilisée afin d'étudier le comportement $ Sm_{0.12}Ga_{0.88}N $. Le gap d'énergie calculée théoriquement et trouvée inderect à 3.041 eV sous l'effet de coplage spin orbite qui montre le caractère de semiconducteur. L'approximation GGA + U a également été utilisée pour l'étude sur les propriétés optiques qui sont présentées dans les résultats pour les parties réelles et imaginaires de la fonction diélectrique et plus de constantes optiques. 
